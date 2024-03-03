@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FarmerEats</string>
+
+    <string name="title_1">Quality</string>
+    <string name="intro_1">Sell your farm fresh products directly to \nconsumers, cutting out the middleman and \nreducing emissions of the global supply chain.</string>
+
+    <string name="title_2">Convenient</string>
+    <string name="intro_2">Our team of delivery drivers will make sure \nyour orders are picked up on time and \npromptly delivered to your customers.</string>
+
+    <string name="title_3">Local</string>
+    <string name="intro_3">We love the earth and know you do too! \nJoin us in reducing our local carbon footprint \none order at a time.</string>
+
+    <string name="join_btn_text">Join the movement!</string>
+    <string name="login_btn_text"><u>Login</u></string>
+    <string name="on_boarding">On Boarding</string>
+
+</resources>
