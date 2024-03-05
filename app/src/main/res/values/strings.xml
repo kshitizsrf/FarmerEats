@@ -13,5 +13,13 @@
     <string name="join_btn_text">Join the movement!</string>
     <string name="login_btn_text"><u>Login</u></string>
     <string name="on_boarding">On Boarding</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="new_here">New here?  </string>
+    <string name="create_account">Create account</string>
+    <string name="forgot">Forgot?</string>
+    <string name="login">Login</string>
+    <string name="or_login_with">or login with</string>
 
 </resources>

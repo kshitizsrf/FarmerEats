@@ -37,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/be_vietnam_medium"
-                android:text="@string/title_1"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -47,8 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
                 android:id="@+id/onboardIntroTextView"
-                style="@style/OnBoardingTextView"
-                android:text="@string/intro_1"
+                style="@style/OnBoardingTextStyle"
                 app:layout_constraintBottom_toTopOf="@id/threeDotsLayout"
                 app:layout_constraintTop_toBottomOf="@id/onboardTitleTextView"
                 tools:ignore="MissingConstraints" />
@@ -64,7 +62,7 @@
                 app:layout_constraintVertical_bias="0.48" />
             <Button
                 android:id="@+id/joinButton"
-                style="@style/OnBoardingTextView"
+                style="@style/OnBoardingTextStyle"
                 android:paddingVertical="14dp"
                 android:text="@string/join_btn_text"
                 android:textColor="@color/white"
@@ -75,7 +73,7 @@
                 tools:ignore="MissingConstraints" />
             <TextView
                 android:id="@+id/loginButton"
-                style="@style/OnBoardingTextView"
+                style="@style/OnBoardingTextStyle"
                 android:text="@string/login_btn_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/joinButton"

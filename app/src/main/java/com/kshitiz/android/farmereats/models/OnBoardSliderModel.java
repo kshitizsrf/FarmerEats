@@ -1,10 +1,10 @@
 package com.kshitiz.android.farmereats.models;
 
-public class SliderModel {
+public class OnBoardSliderModel {
     private final String titleText, introText;
     private final int bgImageId, bgColorId;
 
-    public SliderModel(String titleText, String introText, int bgImageId, int bgColorId) {
+    public OnBoardSliderModel(String titleText, String introText, int bgImageId, int bgColorId) {
         this.titleText = titleText;
         this.introText = introText;
         this.bgImageId = bgImageId;

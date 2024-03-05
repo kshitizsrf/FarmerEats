@@ -9,18 +9,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.kshitiz.android.farmereats.adapters.SliderAdapter;
-import com.kshitiz.android.farmereats.models.SliderModel;
+import com.kshitiz.android.farmereats.adapters.OnBoardSliderAdapter;
+import com.kshitiz.android.farmereats.models.OnBoardSliderModel;
 
 import java.util.ArrayList;
 
 public class OnBoardingActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
-    private ArrayList<SliderModel> sliderModels;
+    private ArrayList<OnBoardSliderModel> sliderModels;
     private TextView[] dots;
-    SliderAdapter sliderAdapter;
-    View mDecorView;
+    OnBoardSliderAdapter sliderAdapter;
     int size;
 
     @Override
@@ -28,18 +27,17 @@ public class OnBoardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
 
-        mDecorView = getWindow().getDecorView();
-        hideSystemUI();
+        hideSystemUI(getWindow().getDecorView());
 
         viewPager = findViewById(R.id.viewPager);
         dotsLayout = findViewById(R.id.threeDotsLayout);
 
         sliderModels = new ArrayList<>();
-        sliderModels.add(new SliderModel(getString(R.string.title_1), getString(R.string.intro_1), R.drawable.img_onboarding_1, getColor(R.color.onboardingPage1Color)));
-        sliderModels.add(new SliderModel(getString(R.string.title_2), getString(R.string.intro_2), R.drawable.img_onboarding_2, getColor(R.color.onboardingPage2Color)));
-        sliderModels.add(new SliderModel(getString(R.string.title_3), getString(R.string.intro_3), R.drawable.img_onboarding_3, getColor(R.color.onboardingPage3Color)));
+        sliderModels.add(new OnBoardSliderModel(getString(R.string.title_1), getString(R.string.intro_1), R.drawable.img_onboarding_1, getColor(R.color.onboardingPage1Color)));
+        sliderModels.add(new OnBoardSliderModel(getString(R.string.title_2), getString(R.string.intro_2), R.drawable.img_onboarding_2, getColor(R.color.onboardingPage2Color)));
+        sliderModels.add(new OnBoardSliderModel(getString(R.string.title_3), getString(R.string.intro_3), R.drawable.img_onboarding_3, getColor(R.color.onboardingPage3Color)));
 
-        sliderAdapter = new SliderAdapter(OnBoardingActivity.this, sliderModels, viewPager);
+        sliderAdapter = new OnBoardSliderAdapter(OnBoardingActivity.this, sliderModels, viewPager);
         viewPager.setAdapter(sliderAdapter);
 
         size = sliderModels.size();
@@ -81,7 +79,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         public void onPageScrollStateChanged(int state) {}
     };
 
-    private void hideSystemUI() {
+    private void hideSystemUI(View mDecorView) {
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -91,7 +89,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE);
     }
 
-    private void showSystemUI() {
+    private void showSystemUI(View mDecorView) {
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
