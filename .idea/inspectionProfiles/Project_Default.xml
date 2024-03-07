@@ -1,7 +1,10 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="AndroidLintDuplicateIds" enabled="true" level="ERROR" enabled_by_default="true" editorAttributes="ERRORS_ATTRIBUTES" />
+    <inspection_tool class="ButtonSize" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="FieldCanBeLocal" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ReassignedVariable" enabled="false" level="TEXT ATTRIBUTES" enabled_by_default="false" />
+    <inspection_tool class="TextFieldSize" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>
