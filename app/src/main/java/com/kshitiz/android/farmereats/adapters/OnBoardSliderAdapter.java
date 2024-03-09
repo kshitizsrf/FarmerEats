@@ -1,5 +1,6 @@
 package com.kshitiz.android.farmereats.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -25,10 +26,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class OnBoardSliderAdapter extends PagerAdapter {
-    Context context;
-    ViewPager viewPager;
+    final Context context;
+    final ViewPager viewPager;
     LayoutInflater inflater;
-    ArrayList<OnBoardSliderModel> sliderModels;
+    final ArrayList<OnBoardSliderModel> sliderModels;
 
     public OnBoardSliderAdapter(Context context, ArrayList<OnBoardSliderModel> sliderModels, ViewPager viewPager) {
         this.context = context;
@@ -72,11 +73,15 @@ public class OnBoardSliderAdapter extends PagerAdapter {
                 viewPager.setCurrentItem(position + 1);
             }
             else {
+                viewPager.setCurrentItem(0);
                 // Handle the case when you are on the last slide
                 // You might want to navigate to another activity or perform a specific action
             }
         });
-        loginButton.setOnClickListener(v -> context.startActivity(new Intent(context, SignInActivity.class)));
+        loginButton.setOnClickListener(v -> {
+            context.startActivity(new Intent(context, SignInActivity.class));
+            ((Activity) context).finish();
+        });
 
         container.addView(view);
 
@@ -96,7 +101,7 @@ public class OnBoardSliderAdapter extends PagerAdapter {
             scrollerField.setAccessible(true);
 
             CustomViewPagerScroller scroller = new CustomViewPagerScroller(viewPager.getContext(), new DecelerateInterpolator());
-            scroller.setScrollDuration(300);
+            scroller.setScrollDuration(400);
 
             scrollerField.set(viewPager, scroller);
         }

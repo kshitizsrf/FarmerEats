@@ -1,12 +1,25 @@
-exi<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/loginViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/heading"
         style="@style/OnBoardingTextStyle"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/app_name"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,158 +27,25 @@ exi<?xml version="1.0" encoding="utf-8"?>
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0426"
         tools:ignore="MissingConstraints" />
-    <TextView
-        android:id="@+id/signInTitleTextView"
-        style="@style/OnBoardingTextStyle"
-        android:text="@string/welcome_back"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1200"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1765"
-        tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/signInTitleTextView"
-        app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
-        app:layout_constraintVertical_bias="0.03703">
-        <TextView
-            android:id="@+id/signInPromptTextView"
-            style="@style/SignInPageTextStyle"
-            android:text="@string/new_here"
-            tools:ignore="TextContrastCheck" />
-        <TextView
-            android:id="@+id/signInPromptActionButton"
-            style="@style/OtherOptionButtonTextStyle"
-            android:layout_marginStart="6dp"
-            android:text="@string/create_account"
-            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/emailEditText"
-        style="@style/SignInPageEditTextStyle"
-        android:autofillHints="emailAddress"
-        android:drawableStart="@drawable/ic_at_symbol"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_login_facebook"
+        app:iconGravity="textStart"
+        app:iconSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
-        app:layout_constraintVertical_bias="0.1790"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_bias="0.8"
+        app:strokeColor="@color/lighter_text"
+        app:strokeWidth="0.5dp" />
 
-    <EditText
-        android:id="@+id/passwdEditText"
-        style="@style/SignInPageEditTextStyle"
-        android:autofillHints="password"
-        android:drawableStart="@drawable/ic_lock"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="@id/emailEditText"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintVertical_bias="0.04958"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/forgotPasswdButton"
-        style="@style/OtherOptionButtonTextStyle"
-        android:text="@string/forgot"
-        app:layout_constraintBottom_toBottomOf="@id/passwdEditText"
-        app:layout_constraintEnd_toEndOf="@id/passwdEditText"
-        app:layout_constraintHorizontal_bias="0.9515"
-        app:layout_constraintStart_toStartOf="@id/passwdEditText"
-        app:layout_constraintTop_toTopOf="@id/passwdEditText"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/loginSubmitButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/onboardingPage2Color"
-        android:text="@string/login"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.0616"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwdEditText"
-        app:layout_constraintVertical_bias="0.0776"
-        app:layout_constraintWidth_percent="0.8750"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/or_login_with"
-        android:textColor="#4D261C12"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginSubmitButton"
-        app:layout_constraintVertical_bias="0.0975"
-        tools:ignore="SmallSp,TextContrastCheck" />
-
-    <View
-        android:id="@+id/button1"
-        style="@style/OtherLoginButtonsView"
-        android:layout_height="48dp"
-        android:contentDescription="Login with Google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0769"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-    <View
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="@drawable/ic_login_google"
-        app:layout_constraintBottom_toBottomOf="@id/button1"
-        app:layout_constraintEnd_toEndOf="@id/button1"
-        app:layout_constraintStart_toStartOf="@id/button1"
-        app:layout_constraintTop_toTopOf="@id/button1" />
-
-    <View
-        android:id="@+id/button2"
-        style="@style/OtherLoginButtonsView"
-        android:layout_height="48dp"
-        android:contentDescription="Login with Apple ID"
-        app:layout_constraintEnd_toStartOf="@id/button3"
-        app:layout_constraintStart_toEndOf="@id/button1"
-        tools:ignore="MissingConstraints" />
-    <View
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="@drawable/ic_login_apple"
-        app:layout_constraintBottom_toBottomOf="@id/button2"
-        app:layout_constraintEnd_toEndOf="@id/button2"
-        app:layout_constraintStart_toStartOf="@id/button2"
-        app:layout_constraintTop_toTopOf="@id/button2" />
-
-    <View
-        android:id="@+id/button3"
-        style="@style/OtherLoginButtonsView"
-        android:layout_height="48dp"
-        android:contentDescription="Login with Facebook"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9231"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-    <View
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="@drawable/ic_login_facebook"
-        app:layout_constraintBottom_toBottomOf="@id/button3"
-        app:layout_constraintEnd_toEndOf="@id/button3"
-        app:layout_constraintStart_toStartOf="@id/button3"
-        app:layout_constraintTop_toTopOf="@id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

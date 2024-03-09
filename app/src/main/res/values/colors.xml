@@ -3,6 +3,9 @@
     <color name="onboardingPage1Color">#5EA25F</color>
     <color name="onboardingPage2Color">#D5715B</color>
     <color name="onboardingPage3Color">#F8C569</color>
+    <color name="not_so_black">#261C12</color>
+    <color name="lighter_text">#4D000000</color>
+    <color name="edit_text">#12261C12</color>
 
     Shades of Green
     <color name="aqua">#00FFFF</color>
@@ -299,6 +302,5 @@
     <color name="smoke">#848884</color>
     <color name="steel_gray">#71797E</color>
     <color name="putatoe">#4B6680</color>
-    <color name="not_so_black">#2B2727</color>
 
 </resources>

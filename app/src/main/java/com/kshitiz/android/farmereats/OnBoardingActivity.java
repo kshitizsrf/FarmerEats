@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -29,7 +30,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
         hideSystemUI(getWindow().getDecorView());
 
-        viewPager = findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.onBoardViewPager);
         dotsLayout = findViewById(R.id.threeDotsLayout);
 
         sliderModels = new ArrayList<>();
@@ -66,7 +67,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         }
     }
 
-    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+    final ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
@@ -79,7 +80,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         public void onPageScrollStateChanged(int state) {}
     };
 
-    private void hideSystemUI(View mDecorView) {
+    private void hideSystemUI(@NonNull View mDecorView) {
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -89,7 +90,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE);
     }
 
-    private void showSystemUI(View mDecorView) {
+    private void showSystemUI(@NonNull View mDecorView) {
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
