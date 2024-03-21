@@ -20,6 +20,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.kshitiz.android.farmereats.R;
 import com.kshitiz.android.farmereats.SignInActivity;
+import com.kshitiz.android.farmereats.custom_classes.CustomViewPagerScroller;
 import com.kshitiz.android.farmereats.models.OnBoardSliderModel;
 
 import java.lang.reflect.Field;
@@ -27,8 +28,8 @@ import java.util.ArrayList;
 
 public class OnBoardSliderAdapter extends PagerAdapter {
     final Context context;
-    final ViewPager viewPager;
     LayoutInflater inflater;
+    final ViewPager viewPager;
     final ArrayList<OnBoardSliderModel> sliderModels;
 
     public OnBoardSliderAdapter(Context context, ArrayList<OnBoardSliderModel> sliderModels, ViewPager viewPager) {
@@ -82,11 +83,8 @@ public class OnBoardSliderAdapter extends PagerAdapter {
             context.startActivity(new Intent(context, SignInActivity.class));
             ((Activity) context).finish();
         });
-
         container.addView(view);
-
         setViewPagerScrollSpeed();
-
         return view;
     }
 
@@ -101,7 +99,7 @@ public class OnBoardSliderAdapter extends PagerAdapter {
             scrollerField.setAccessible(true);
 
             CustomViewPagerScroller scroller = new CustomViewPagerScroller(viewPager.getContext(), new DecelerateInterpolator());
-            scroller.setScrollDuration(400);
+            scroller.setScrollDuration(300);
 
             scrollerField.set(viewPager, scroller);
         }

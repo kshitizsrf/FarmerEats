@@ -15,8 +15,9 @@
 
     <string name="on_boarding">On Boarding</string>
 
-    <string name="password">Password</string>
     <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
 
     <string name="welcome_back">Welcome Back!</string>
     <string name="forgot_password">Forgot Password?</string>
@@ -28,7 +29,13 @@
     <string name="remember_your_password">Remember your pasword?</string>
     <string name="forgot">Forgot?</string>
     <string name="login">Login</string>
+
+    <string name="send_code">Send Code</string>
+    <string name="submit">Submit</string>
     <string name="resend_code"><u>Resend Code</u></string>
+
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
 
     <string name="or_login_with">or login with</string>
     <string name="login_with_google">Login with Google</string>

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginSliderLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,60 +19,26 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        style="@style/WrapContentStyle"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/signInTitleTextView"
         app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
         app:layout_constraintVertical_bias="0.03703">
+
         <TextView
-            android:id="@+id/signInPromptTextView"
+            android:id="@+id/promptTextView"
             style="@style/SignInPageTextStyle"
             android:text="@string/new_here"
             tools:ignore="TextContrastCheck" />
+
         <TextView
-            android:id="@+id/signInPromptActionButton"
+            android:id="@+id/promptActionButton"
             style="@style/ActionTextViewStyle"
             android:layout_marginStart="6dp"
             android:text="@string/create_account"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/SignInPageLayoutStyle"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        app:layout_constraintHeight_percent="0.07"
-        app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
-        app:layout_constraintVertical_bias="0.179"
-        app:layout_constraintWidth_percent="0.89"
-        tools:ignore="MissingConstraints">
-        <EditText
-            android:id="@+id/otpEditText1"
-            style="@style/OtpEditTextStyle"
-            android:autofillHints="password"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-        <EditText
-            android:id="@+id/otpEditText2"
-            style="@style/OtpEditTextStyle"
-            android:autofillHints="password"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-        <EditText
-            android:id="@+id/otpEditText3"
-            style="@style/OtpEditTextStyle"
-            android:autofillHints="password"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-        <EditText
-            android:id="@+id/otpEditText4"
-            style="@style/OtpEditTextStyle"
-            android:autofillHints="password"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-        <EditText
-            android:id="@+id/otpEditText5"
-            style="@style/OtpEditTextStyle"
-            android:autofillHints="password"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <EditText
@@ -81,7 +48,6 @@
         android:drawableStart="@drawable/ic_at_symbol"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
         app:layout_constraintVertical_bias="0.179"
         tools:ignore="MissingConstraints,TextContrastCheck,TouchTargetSizeCheck" />
@@ -93,7 +59,6 @@
         android:drawableStart="@drawable/ic_lock"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/emailEditText"
         app:layout_constraintVertical_bias="0.0496"
         tools:ignore="MissingConstraints,TextContrastCheck,TouchTargetSizeCheck" />
@@ -102,13 +67,54 @@
         android:id="@+id/forgotPasswdButton"
         style="@style/ActionTextViewStyle"
         android:text="@string/forgot"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/passwdEditText"
         app:layout_constraintEnd_toEndOf="@id/passwdEditText"
         app:layout_constraintHorizontal_bias="0.9515"
         app:layout_constraintStart_toStartOf="@id/passwdEditText"
         app:layout_constraintTop_toTopOf="@id/passwdEditText"
         tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:id="@+id/otpEditTextLayout"
+        style="@style/SignInPageLayoutStyle"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintTop_toBottomOf="@id/signInTitleTextView"
+        app:layout_constraintVertical_bias="0.179"
+        app:layout_constraintWidth_percent="0.89"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/otpEditText1"
+            style="@style/OtpEditTextStyle"
+            android:autofillHints="password"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/otpEditText2"
+            style="@style/OtpEditTextStyle"
+            android:autofillHints="password"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/otpEditText3"
+            style="@style/OtpEditTextStyle"
+            android:autofillHints="password"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/otpEditText4"
+            style="@style/OtpEditTextStyle"
+            android:autofillHints="password"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/otpEditText5"
+            style="@style/OtpEditTextStyle"
+            android:autofillHints="password"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/loginSubmitButton"
@@ -122,6 +128,7 @@
         tools:ignore="MissingConstraints,TextContrastCheck,TouchTargetSizeCheck" />
 
     <TextView
+        android:id="@+id/resendOtpButton"
         style="@style/ConstraintElementsStyle"
         android:text="@string/resend_code"
         android:textColor="@color/black"
@@ -131,49 +138,41 @@
         app:layout_constraintVertical_bias="0.042"
         tools:ignore="MissingConstraints" />
 
-    <ProgressBar
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_margin="16dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/otherLoginText"
+        style="@style/OtherOptionTextStyle"
         android:text="@string/or_login_with"
-        android:textColor="#4D261C12"
-        android:textSize="10sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginSubmitButton"
-        app:layout_constraintVertical_bias="0.0975"
-        tools:ignore="SmallSp,TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.096"
+        tools:ignore="MissingConstraints,SmallSp,TextContrastCheck" />
 
     <LinearLayout
+        android:id="@+id/otherButtonsLayout"
         style="@style/SignInPageLayoutStyle"
-        app:layout_constraintHeight_percent="0.118"
-        app:layout_constraintTop_toBottomOf="@id/loginSubmitButton"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintWidth_percent="0.89"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintHeight_percent="0.062"
+        app:layout_constraintTop_toBottomOf="@id/otherLoginText"
+        app:layout_constraintVertical_bias="0.1138"
         tools:ignore="MissingConstraints">
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/OtherLoginButtonsView"
-            android:backgroundTint="@color/red"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_login_facebook"
-            app:iconGravity="textStart"
-            app:iconSize="36dp"
-            app:strokeColor="@color/lighter_text"
-            app:strokeWidth="0.5dp" />
+        <ImageView
+            android:id="@+id/googleLoginButton"
+            style="@style/OtherLoginButtonStyle"
+            android:contentDescription="@string/login_with_google"
+            android:src="@drawable/ic_login_google" />
 
+        <ImageView
+            android:id="@+id/appleLoginButton"
+            style="@style/OtherLoginButtonStyle"
+            android:contentDescription="@string/login_with_apple_id"
+            android:src="@drawable/ic_login_apple" />
+
+        <ImageView
+            android:id="@+id/fbLoginButton"
+            style="@style/OtherLoginButtonStyle"
+            android:contentDescription="@string/login_with_facebook"
+            android:src="@drawable/ic_login_facebook" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/loginViewPager"
+    <com.kshitiz.android.farmereats.custom_classes.NonSwipeableViewPager
+        android:id="@+id/signInViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,24 +29,27 @@
         app:layout_constraintVertical_bias="0.0426"
         tools:ignore="MissingConstraints" />
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="90dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/red"
-        android:gravity="center"
-        android:text=""
-        android:textColor="@color/black"
-        app:icon="@drawable/ic_login_facebook"
-        app:iconGravity="textStart"
-        app:iconSize="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/heading"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heading"
-        app:layout_constraintVertical_bias="0.8"
-        app:strokeColor="@color/lighter_text"
-        app:strokeWidth="0.5dp" />
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@id/heading"
+        app:layout_constraintTop_toTopOf="@id/heading" />
 
-
+    <ImageButton
+        android:id="@+id/backButton"
+        style="@style/Widget.AppCompat.ActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:contentDescription="@string/welcome_back"
+        android:padding="16dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

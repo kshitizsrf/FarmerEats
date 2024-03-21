@@ -1,4 +1,4 @@
-package com.kshitiz.android.farmereats.adapters;
+package com.kshitiz.android.farmereats.custom_classes;
 
 import android.content.Context;
 import android.view.animation.Interpolator;

@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="OnBoardingTextStyle">
+    <style name="WrapContentStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MatchParentStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ConstraintElementsStyle" parent="WrapContentStyle">
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <style name="OnBoardingTextStyle" parent="WrapContentStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/not_so_black</item>
         <item name="android:gravity">center_horizontal</item>
@@ -11,24 +25,12 @@
         <item name="layout_constraintEnd_toEndOf">parent</item>
     </style>
 
-    <style name="ConstraintElementsStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="layout_constraintStart_toStartOf">parent</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
-        <item name="layout_constraintBottom_toBottomOf">parent</item>
-    </style>
-
-    <style name="SignInPageTextStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="SignInPageTextStyle" parent="WrapContentStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/lighter_text</item>
     </style>
 
-    <style name="ActionTextViewStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="ActionTextViewStyle" parent="WrapContentStyle">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:textColor">@drawable/selector_text_btn</item>
@@ -53,9 +55,7 @@
         <item name="android:background">@drawable/selector_edit_text</item>
     </style>
 
-    <style name="OtpEditTextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+    <style name="OtpEditTextStyle" parent="MatchParentStyle">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginStart">8dp</item>
@@ -67,10 +67,19 @@
         <item name="android:background">@drawable/selector_edit_text</item>
     </style>
 
-    <style name="OtherLoginButtonsView">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+    <style name="OtherLoginButtonStyle">
         <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/button_other_login</item>
     </style>
 
+    <style name="OtherOptionTextStyle" parent="ConstraintElementsStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#4D261C12</item>
+    </style>
 </resources>

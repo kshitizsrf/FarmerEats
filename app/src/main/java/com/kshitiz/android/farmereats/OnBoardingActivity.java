@@ -16,12 +16,12 @@ import com.kshitiz.android.farmereats.models.OnBoardSliderModel;
 import java.util.ArrayList;
 
 public class OnBoardingActivity extends AppCompatActivity {
+    int size;
+    private TextView[] dots;
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
-    private ArrayList<OnBoardSliderModel> sliderModels;
-    private TextView[] dots;
     OnBoardSliderAdapter sliderAdapter;
-    int size;
+    private ArrayList<OnBoardSliderModel> sliderModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
